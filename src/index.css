@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-[#0D0D0D] text-white antialiased;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  h1, h2, h3 { @apply font-semibold; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-[#C6F135] text-[#0D0D0D] hover:bg-[#d4ff3d] focus:ring-[#C6F135] shadow-sm font-semibold;
+  }
+  .btn-secondary {
+    @apply btn bg-[#1A1A1A] text-white border border-[#2A2A2A] hover:bg-[#222222] focus:ring-[#C6F135];
+  }
+  .btn-danger {
+    @apply btn bg-[#FF6B6B] text-white hover:bg-[#ff5252] focus:ring-[#FF6B6B] shadow-sm;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-zinc-400 hover:bg-[#1A1A1A] hover:text-white focus:ring-[#C6F135];
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-[#2A2A2A] bg-[#1A1A1A] px-3 py-2.5 text-sm text-white placeholder-zinc-600 transition
+    focus:border-[#C6F135] focus:outline-none focus:ring-2 focus:ring-[#C6F135]/30
+    disabled:bg-[#111111] disabled:cursor-not-allowed;
+  }
+  .card {
+    @apply rounded-2xl bg-[#141414] border border-[#1F1F1F];
+  }
+  .stat-card-lime {
+    @apply rounded-2xl p-5 text-[#0D0D0D] font-bold;
+    background: #C6F135;
+  }
+  .stat-card-green {
+    @apply rounded-2xl p-5 text-[#0D0D0D] font-bold;
+    background: #4ADE80;
+  }
+  .stat-card-coral {
+    @apply rounded-2xl p-5 text-white font-bold;
+    background: #FF6B6B;
+  }
+  .stat-card-teal {
+    @apply rounded-2xl p-5 text-[#0D0D0D] font-bold;
+    background: #2DD4BF;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #2A2A2A transparent;
+  }
+}

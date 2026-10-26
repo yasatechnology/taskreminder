@@ -1,0 +1,13 @@
+# Supabase Edge Functions Configuration
+# File ini mengkonfigurasi perilaku semua Edge Functions dalam proyek ini.
+# Referensi: https://supabase.com/docs/guides/functions/deploy
+
+[functions.telegram-webhook]
+# Nonaktifkan verifikasi JWT agar Telegram dapat mengirim webhook
+# tanpa Authorization header dari Supabase
+verify_jwt = false
+
+[functions.send-reminders]
+# Aktifkan verifikasi JWT — hanya boleh dipanggil dengan Service Role Key
+# (dari pg_cron via pg_net, atau manual testing)
+verify_jwt = true
